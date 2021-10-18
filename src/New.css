@@ -7,16 +7,16 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   color: #071739;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #000;
-  /* background: #48cf99; */
-  background-color: #7f5a83;
-  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
-  font-family: "Poppins", sans-serif;
+  text-align: center;
+  background: url("./box.png") repeat 0 0;
+  animation: background-scroll 6s infinite;
+  animation-timing-function: linear;
 }
 
 .App {
@@ -24,26 +24,51 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  width: 100vw;
 }
 
 .music-player {
   display: block;
   padding: 50px;
-  border-radius: 35px;
-  background-color: rgba(226, 102, 181, 0.9);
-  background-image: linear-gradient(315deg, #fe7bb0 0%, #ff748b 74%);
-  box-shadow: 0 20px 50px rgba(226, 102, 181, 0.9);
+  border-radius: 9px;
+  background: -moz-linear-gradient(
+    top,
+    rgba(184, 183, 183, 0.65) 0,
+    rgba(51, 51, 51, 1) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(51, 51, 51, 0.5)),
+    color-stop(100%, rgba(51, 51, 51, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(51, 51, 51, 0.65) 0,
+    rgba(51, 51, 51, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(51, 51, 51, 0.65) 0,
+    rgba(51, 51, 51, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(51, 51, 51, 0.65) 0,
+    rgba(51, 51, 51, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 51, 51, 0.65) 0,
+    rgba(51, 51, 51, 1) 30%
+  );
   align-items: center;
 }
 
 .music-player > h4 {
   color: #c4125c;
   text-shadow: 2px 2px #510202;
-  /* font-size: 20px;
-  text-transform: uppercase;
-  font-weight: 450;
-  text-align: center;
-  display: flex; */
   justify-content: center;
   display: flex;
   font-size: 2.5em;
@@ -61,7 +86,9 @@ body {
 }
 
 .music-player > p {
-  color: rgb(56, 52, 52);
+  color: #eee;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8),
+    -2px -2px 4px rgba(255, 255, 255, 0.4);
   font-size: 14px;
   font-weight: 550;
   text-align: center;
@@ -71,6 +98,7 @@ body {
   position: relative;
   width: fit-content;
   margin: 30px auto;
+  transition: all 0.5s;
 }
 
 .music-player--details .details-img img {
@@ -78,7 +106,8 @@ body {
   margin: 0px auto;
   width: 100%;
   max-width: 240px;
-  border-radius: 30%;
+  border-radius: 10%;
+  transition: all 0.5s;
 }
 
 .music-player--details .details-img img:hover {
@@ -86,7 +115,7 @@ body {
   margin: 0px auto;
   width: 100%;
   max-width: 240px;
-  border-radius: 30%;
+  border-radius: 50%;
   box-shadow: 5px 5px rgba(98, 0, 41, 0.4), 10px 10px rgba(98, 0, 57, 0.3),
     15px 15px rgba(98, 0, 57, 0.2), 20px 20px rgba(98, 0, 69, 0.1),
     25px 25px rgba(98, 0, 33, 0.05);
@@ -122,11 +151,10 @@ body {
   display: flex;
   margin: 0 30px;
   padding: 30px;
-  border-radius: 100%;
-
+  border-radius: 20%;
   border: none;
   outline: none;
-  background-color: rgba(228, 82, 174, 0.9);
+  background-color: rgba(199, 82, 228, 0.9);
   color: #fff;
   font-size: 24px;
   cursor: pointer;
@@ -245,4 +273,24 @@ body {
     -webkit-background-clip: text;
   }
 }
-/*  */
+
+@-webkit-keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}

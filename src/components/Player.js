@@ -41,38 +41,42 @@ function Player(props) {
   };
 
   return (
-    <div className="music-player">
-      <audio
-        src={props.songs[props.currentSongIndex].src}
-        ref={audioElement}
-      ></audio>
-      <h4>Lofi Music Player React </h4>
+    <>
+      <div className="music-player">
+        <p>
+          <div className="text-anim">
+            <strong>Upcoming Song:</strong>
+          </div>
 
-      <PlayerDetails song={props.songs[props.currentSongIndex]} />
-      <PlayerControls
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        SkipSong={SkipSong}
-      />
-      <p>
-        <div className="text-anim">
-          <strong>Upcoming Song:</strong>
-        </div>
-        <div className="nextsong-details">
-          <img
-            src={props.songs[props.nextSongIndex].img_src}
-            alt={props.songs[props.nextSongIndex].title}
-            style={{ width: "4em", height: "auto" }}
-          />
-          <p>
-            <b>{props.songs[props.nextSongIndex].title} </b>&nbsp; by &nbsp;
-            <b>{props.songs[props.nextSongIndex].artist}</b>&nbsp; from album
-            &nbsp;
-            <b>{props.songs[props.nextSongIndex].album}</b>
-          </p>
-        </div>
-      </p>
-    </div>
+          <div className="nextsong-details">
+            <img
+              src={props.songs[props.nextSongIndex].img_src}
+              alt={props.songs[props.nextSongIndex].title}
+              style={{ width: "4em", height: "auto" }}
+            />
+            <p>
+              <b>{props.songs[props.nextSongIndex].title} </b>&nbsp; by &nbsp;
+              <b>{props.songs[props.nextSongIndex].artist}</b>&nbsp; from album
+              &nbsp;
+              <b>{props.songs[props.nextSongIndex].album}</b>
+            </p>
+          </div>
+        </p>
+        <audio
+          src={props.songs[props.currentSongIndex].src}
+          ref={audioElement}
+        ></audio>
+
+        <PlayerDetails song={props.songs[props.currentSongIndex]} />
+        <PlayerControls
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          SkipSong={SkipSong}
+        />
+
+        {/* <h4>Lofi Music Player React </h4> */}
+      </div>
+    </>
   );
 }
 export default Player;
