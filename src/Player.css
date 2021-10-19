@@ -232,7 +232,7 @@ body {
 }
 
 .nextsong-details {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: row;
   padding: 1px;
