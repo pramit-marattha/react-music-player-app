@@ -19,6 +19,10 @@ body {
   animation-timing-function: linear;
 }
 
+a {
+  text-decoration: none;
+}
+
 .App {
   display: flex;
   align-items: center;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./New.css";
+import "./Player.css";
 import Player from "./components/Player";
 
 function App() {
